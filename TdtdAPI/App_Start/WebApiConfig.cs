@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LoggerService;
 using System.Web.Http;
 
 namespace TdtdAPI
@@ -10,6 +11,15 @@ namespace TdtdAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            /***************************************************
+             * To set CORS policy GLOBALY use:
+             * 
+             * var cors = new EnableCorsAttribute("www.example.com", "*", "*");
+             * config.EnableCors(cors);
+             * 
+             * *************************************************/
+            config.EnableCors();
+
 
             // Web API routes
             config.MapHttpAttributeRoutes();

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TdtdAPI", "TdtdAPI\TdtdAPI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TdtdAPI.Tests", "TdtdAPI.Tests\TdtdAPI.Tests.csproj", "{7958FDDB-8518-425D-A90B-828053C1F263}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{511B8731-51AC-422A-8339-FD2A51791423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{7BBBBA14-B504-44EE-A562-93737F6E4B4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7958FDDB-8518-425D-A90B-828053C1F263}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7958FDDB-8518-425D-A90B-828053C1F263}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7958FDDB-8518-425D-A90B-828053C1F263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511B8731-51AC-422A-8339-FD2A51791423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511B8731-51AC-422A-8339-FD2A51791423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511B8731-51AC-422A-8339-FD2A51791423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511B8731-51AC-422A-8339-FD2A51791423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BBBBA14-B504-44EE-A562-93737F6E4B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBBBA14-B504-44EE-A562-93737F6E4B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBBBA14-B504-44EE-A562-93737F6E4B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBBBA14-B504-44EE-A562-93737F6E4B4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
