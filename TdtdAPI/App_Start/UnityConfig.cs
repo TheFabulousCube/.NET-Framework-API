@@ -1,5 +1,6 @@
 using Contracts;
 using LoggerService;
+using Repository;
 using System;
 //using System.Web.Http;
 using Unity;
@@ -47,6 +48,7 @@ namespace TdtdAPI
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<ILoggerManager, LoggerManager>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IRepositoryWrapper, RepositoryWrapper>();
 
             //GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

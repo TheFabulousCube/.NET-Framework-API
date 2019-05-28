@@ -1,0 +1,4 @@
+2019-05-26 19:00:39.1583 INFO Here is info QA message from our values controller.
+2019-05-26 19:00:39.2843 DEBUG Here is debug QA message from our values controller.
+2019-05-26 19:00:39.2843 WARN Here is warn QA message from our values controller.
+2019-05-26 19:00:39.2843 ERROR Here is error QA message from our values controller.
