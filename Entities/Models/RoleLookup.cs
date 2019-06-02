@@ -8,7 +8,10 @@ namespace Entities.Models
     public partial class RoleLookup
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RoleLookup() => Users = new HashSet<Users>();
+        public RoleLookup()
+        {
+            Users = new HashSet<Users>();
+        }
 
         [Key]
         [StringLength(1)]

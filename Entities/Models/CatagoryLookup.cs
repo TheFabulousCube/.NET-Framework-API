@@ -9,7 +9,10 @@ namespace Entities.Models
     public partial class CatagoryLookup
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CatagoryLookup() => Clothing = new HashSet<Clothing>();
+        public CatagoryLookup()
+        {
+            Clothing = new HashSet<Clothing>();
+        }
 
         [Key]
         [StringLength(10)]
