@@ -1,6 +1,5 @@
 ﻿using Entities.Models;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 
 namespace Entities
 {
