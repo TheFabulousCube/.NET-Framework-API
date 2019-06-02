@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
-    [Table("tadaatiedyetpc.magnets")]
+    [Table("tadaatiedyetpc.Magnets")]
     public partial class Magnets 
     {
         [Key]
