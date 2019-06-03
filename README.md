@@ -19,12 +19,25 @@ Based on Code Maze Tutorial at https://code-maze.com/net-core-series/.
 The **Repository Pattern** is working nice!  Since the magnets & T-shirts have common product information, I created a **ProductBase** class & extended the models for Magnets & Clothing.  I originally designed the database as Table-per-Heading and had to switch it to Table-per-Concrete because I couldn't get early Entity Framework to use Table-per-Heading.  Modern Entity Framework is *much* more flexible! (Or maybe I'm just smarter.)
 
 **Dependancy Injection** is easy in .NET Core. I had to institute Unity.  It's pretty nice, works for the Logger, too!  I just haven't used the Logger much yet.
+***
+## Change Log
+1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the Deployment process to Jenkins. By doing that, I can 
+          remove sensitive Production connections strings from here and build them at deployment time.
+          A push to the _dev_ branch triggers a build/run tests.  If that passes, Jenkins merges the _dev_ branch onto the _qa_
+          branch and calls **Deploy to QA**.  **Deploy to QA** does another build, creating the deployment package & deploys to
+          my local IIS.  **Deploy to Staging** is manually triggered.  It pulls from _qa_, does the build, including the deployment
+          package.  At this point I copy a SetParameters.xml file from my C: drive (relatively secure location) to deploy to  `staging.tadaatiedye.com`.  When Jenkins deploys, it's using the updated SetParameters for the production database
+          running on the server.  **Deploy to Production** will do the same to `api.tadaatiedye.com`.
+          
+***
 
 ## Still to come: 
   * Finishing out the rest of the controllers
-  * Jenkins build/deploy to QA, then deploy to Staging/Prod
+  * ~~Jenkins build/deploy to QA, then deploy to Staging/Prod~~
+  * Replace NLog with Serilog
   * Unit tests (Framework is in place)
   * Windows Based Authorization - I can lock down the CORS to only my domain also
   * Async
   * Swagger
   * I'm building a Postman collection along the way!
+
