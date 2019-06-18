@@ -26,13 +26,13 @@ namespace Repository
                 .FirstOrDefault();
         }
 
-        public Magnets GetMagnetsInACart(string magnetId)
-        {
-            return new Magnets(GetMagnetById(magnetId))
-            {
-                Carts = RepositoryContext.Carts
-                .Where(c => c.ProdID == magnetId)
-            };
-        }
+        //public Magnets GetMagnetsInACart(string magnetId)
+        //{
+        //    return new Magnets(GetMagnetById(magnetId))
+        //    {
+        //        Carts = RepositoryContext.Carts
+        //        .Where(c => c.ProdID == magnetId)
+        //    };
+        //}
     }
 }

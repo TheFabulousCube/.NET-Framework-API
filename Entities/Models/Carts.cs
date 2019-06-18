@@ -18,6 +18,6 @@ namespace Entities.Models
 
         public int Qty { get; set; }
 
-        public virtual Users User { get; set; }
+        //public virtual Users User { get; set; }
     }
 }

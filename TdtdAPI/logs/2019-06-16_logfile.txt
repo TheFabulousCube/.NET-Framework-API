@@ -1,0 +1,66 @@
+2019-06-16 11:03:57.8777 INFO Returned 50 from the database
+2019-06-16 11:10:48.7606 INFO GetAllMagnets returned 50 magnets in MagnetsController from the database
+2019-06-16 14:52:57.1194 INFO GetAllMagnets returned 50 magnets in MagnetsController from the database
+2019-06-16 14:53:29.2119 INFO GetMagnetById returned SMTN in MagnetsController from the database
+2019-06-16 15:34:08.0768 ERROR Something went wrong inside the GetMagnetById action: Unable to create a constant value of type 'Entities.Models.Magnets'. Only primitive types or enumeration types are supported in this context.
+2019-06-16 15:34:28.4279 ERROR Something went wrong inside the GetMagnetById action: Unable to create a constant value of type 'Entities.Models.Magnets'. Only primitive types or enumeration types are supported in this context.
+2019-06-16 15:35:18.1578 INFO GetMagnetById returned SMTN in MagnetsController from the database
+2019-06-16 15:35:27.7960 ERROR Something went wrong inside the GetMagnetById action: Object reference not set to an instance of an object.
+2019-06-16 15:40:01.1001 ERROR Something went wrong inside the GetMagnetById action: Unable to create a constant value of type 'Entities.Models.Magnets'. Only primitive types or enumeration types are supported in this context.
+2019-06-16 15:40:40.2605 ERROR Something went wrong inside the GetMagnetById action: Unable to create a constant value of type 'Entities.Models.Magnets'. Only primitive types or enumeration types are supported in this context.
+2019-06-16 15:43:11.4560 INFO GetMagnetById returned SMTN in MagnetsController from the database
+2019-06-16 15:43:24.7834 ERROR Something went wrong inside the GetMagnetById action: Object reference not set to an instance of an object.
+2019-06-16 15:45:08.8713 INFO GetMagnetById returned SMTN in MagnetsController from the database
+2019-06-16 15:51:00.9741 INFO GetMagnetById returned SMTN in MagnetsController from the database
+2019-06-16 15:51:30.0221 ERROR Magnet with id: xjsy, hasn't been found in db.
+2019-06-16 15:58:28.3716 ERROR Magnet with id: xjsy, hasn't been found in db.
+2019-06-16 15:59:23.7236 INFO GetMagnetById returned SMTN in MagnetsController from the database
+2019-06-16 16:06:21.6897 ERROR Magnet with id: xjsy, hasn't been found in db.
+2019-06-16 16:48:15.1399 INFO GetAllClothing returned 77 clothing in ClothingController from the database
+2019-06-16 16:48:52.0838 ERROR Something went wrong inside the GetClothingById action: Unable to create a constant value of type 'Entities.Models.Clothing'. Only primitive types or enumeration types are supported in this context.
+2019-06-16 16:50:43.1140 INFO GetClothingById returned 2001 in ClothingController from the database
+2019-06-16 16:50:53.9315 ERROR Clothing with id: fred, hasn't been found in db.
+2019-06-16 16:51:07.2102 ERROR Magnet with id: fred, hasn't been found in db.
+2019-06-16 17:13:39.9853 INFO GetAllUsers returned 24 users in UsersController from the database
+2019-06-16 17:14:36.6552 ERROR Something went wrong inside the GetUserById action: DbComparisonExpression requires arguments with comparable types.
+2019-06-16 17:50:10.1731 INFO GetAllUsers returned 24 users in UsersController from the database
+2019-06-16 17:51:19.4583 ERROR Something went wrong inside the GetUserById action: DbComparisonExpression requires arguments with comparable types.
+2019-06-16 17:53:44.4899 INFO GetUserById returned 21 in UsersController from the database
+2019-06-16 19:18:21.8955 INFO GetAllCarts returned 24 carts in CartsController from the database
+2019-06-16 19:18:46.1845 INFO GetCartById returned SELECT
+`Extent1`.`UserId`, 
+`Extent1`.`ProdID`, 
+`Extent1`.`Qty`
+FROM `cart` AS `Extent1`
+ WHERE (`Extent1`.`UserId` = @p__linq__0) AND (@p__linq__0 IS NOT NULL) in CartsController from the database
+2019-06-16 19:18:53.5125 INFO GetCartById returned SELECT
+`Extent1`.`UserId`, 
+`Extent1`.`ProdID`, 
+`Extent1`.`Qty`
+FROM `cart` AS `Extent1`
+ WHERE (`Extent1`.`UserId` = @p__linq__0) AND (@p__linq__0 IS NOT NULL) in CartsController from the database
+2019-06-16 19:19:28.4470 INFO GetCartById returned SELECT
+`Extent1`.`UserId`, 
+`Extent1`.`ProdID`, 
+`Extent1`.`Qty`
+FROM `cart` AS `Extent1`
+ WHERE (`Extent1`.`UserId` = @p__linq__0) AND (@p__linq__0 IS NOT NULL) in CartsController from the database
+2019-06-16 19:40:51.4117 INFO GetAllMagnets returned 50 magnets in MagnetsController from the database
+2019-06-16 19:41:25.8931 INFO GetMagnetById returned SMAR in MagnetsController from the database
+2019-06-16 19:41:46.4359 ERROR Clothing with id: fred, hasn't been found in db.
+2019-06-16 19:42:19.0613 INFO GetClothingById returned 2001 in ClothingController from the database
+2019-06-16 19:42:48.4189 INFO GetUserById returned 21 in UsersController from the database
+2019-06-16 19:42:55.0411 INFO GetUserById returned 1 in UsersController from the database
+2019-06-16 19:43:21.4705 INFO GetAllCarts returned 24 carts in CartsController from the database
+2019-06-16 19:43:55.4915 INFO GetCartByUser returned 4 items in CartsController from the database
+2019-06-16 19:44:05.7276 INFO GetCartByUser returned 13 items in CartsController from the database
+2019-06-16 19:51:26.2492 ERROR Couldn't find cart for user:2 containing product: ghty
+2019-06-16 20:09:56.2009 INFO GetAllCarts returned 24 carts in CartsController from the database
+2019-06-16 21:49:29.5765 INFO GetAllCatagories returned 6 catagories in CatagoryController from the database
+2019-06-16 21:50:30.9596 INFO GetCatagoryById returned childsts: Childs T-shirts in CatagoryController from the database
+2019-06-16 21:51:25.8460 INFO GetAllRoles returned 3 roles in RoleController from the database
+2019-06-16 21:51:40.6599 INFO GetRoleById returned g: Guest in RoleController from the database
+2019-06-16 21:51:55.0473 INFO GetAllSizes returned 16 sizes in SizeController from the database
+2019-06-16 21:52:11.7336 INFO GetSizeById returned ad-sm: Adult Small in SizeController from the database
+2019-06-16 21:52:28.2125 INFO GetAllSleeves returned 4 sleeves in SleeveController from the database
+2019-06-16 21:52:34.5986 INFO GetSleeveById returned sh: Short Sleeve in SleeveController from the database

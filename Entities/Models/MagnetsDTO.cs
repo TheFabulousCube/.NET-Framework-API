@@ -6,7 +6,7 @@ namespace Entities.Models
 {
     public partial class Magnets
     {
-        public IEnumerable<Carts> Carts { get; set; }
+        //public IEnumerable<Carts> Carts { get; set; }
 
         public Magnets()
         { }

@@ -21,9 +21,9 @@ namespace Entities.Models
             BackPicture = clothing.BackPicture;
             Size = clothing.Size;
             SleeveLength = clothing.SleeveLength;
-            Catagory_lookup = clothing.Catagory_lookup;
-            Size_lookup = clothing.Size_lookup;
-            Sleeve_lookup = clothing.Sleeve_lookup;
+            //Catagory_lookup = clothing.Catagory_lookup;
+            //Size_lookup = clothing.Size_lookup;
+            //Sleeve_lookup = clothing.Sleeve_lookup;
         }
     }
 }

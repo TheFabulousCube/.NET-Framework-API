@@ -23,7 +23,6 @@ namespace Repository
         public Clothing GetClothingById(string clothingId)
         {
             return FindByCondition(c => c.ProdId.Equals(clothingId))
-                .DefaultIfEmpty(new Clothing() { ProdId = "" })
                 .FirstOrDefault();
         }
 
