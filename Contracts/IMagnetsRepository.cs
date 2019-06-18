@@ -5,9 +5,9 @@ namespace Contracts
 {
     public interface IMagnetsRepository : IRepositoryBase<Magnets>
     {
-        //IEnumerable<Magnets> GetAllMagnets();
-        //Magnets GetMagnetById(string magnetId);
+        IEnumerable<Magnets> GetAllMagnets();
+        Magnets GetMagnetById(string magnetId);
         //Magnets GetMagnetsInACart(string magnetId);
-        Magnets GetMagnetById(string id);
+        //Magnets GetMagnetById(string id);
     }
 }

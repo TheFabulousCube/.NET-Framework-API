@@ -4,23 +4,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
-    [Table("tadaatiedyetpc.Sleeve_Lookup")]
-    public partial class SleeveLookup
+
+    [Table("tadaatiedyetpc.Catagory_Lookup")]
+    public partial class Catagory
     {
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        //public SleeveLookup()
+        //public CatagoryLookup()
         //{
-        //    this.Clothing = new HashSet<Clothing>();
+        //    Clothing = new HashSet<Clothing>();
         //}
 
         [Key]
-        [StringLength(2)]
-        public string SleeveID { get; set; }
+        [StringLength(10)]
+        public string CatId { get; set; }
 
-        [Column("Sleeve Length")]
         [Required]
-        [StringLength(12)]
-        public string Sleeve_Length { get; set; }
+        [StringLength(25)]
+        public string Type { get; set; }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         //public virtual ICollection<Clothing> Clothing { get; set; }

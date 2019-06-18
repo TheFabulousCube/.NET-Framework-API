@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="TaDaaTieDyeTPCEntities-Web.config Connection String" value="server=localhost;port=3307;user id=pipsplay;password=!PHWt6j5u+U%VDwG;persistsecurityinfo=True;database=TaDaaTieDyeTPC;SslMode=none" />
+</parameters>

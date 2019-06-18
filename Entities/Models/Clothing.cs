@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Entities.Models
 {
 
-    [Table("tadaatiedyetpc.clothing")]
+    [Table("tadaatiedyetpc.Clothing")]
     public partial class Clothing
     {
         [Key]
@@ -35,8 +35,8 @@ namespace Entities.Models
         [StringLength(2)]
         public string SleeveLength { get; set; }
 
-        public virtual CatagoryLookup Catagory_lookup { get; set; }
-        public virtual SizeLookup Size_lookup { get; set; }
-        public virtual SleeveLookup Sleeve_lookup { get; set; }
+        //public virtual CatagoryLookup Catagory_lookup { get; set; }
+        //public virtual SizeLookup Size_lookup { get; set; }
+        //public virtual SleeveLookup Sleeve_lookup { get; set; }
     }
 }

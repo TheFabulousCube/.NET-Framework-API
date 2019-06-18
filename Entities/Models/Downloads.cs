@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
-    [Table("tadaatiedyetpc.downloads")]
+    [Table("tadaatiedyetpc.Downloads")]
     public partial class Downloads
     {
         [Key]

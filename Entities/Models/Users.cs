@@ -4,15 +4,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
-    [Table("tadaatiedyetpc.users")]
+    [Table("tadaatiedyetpc.Users")]
     public partial class Users
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
-        {
-            this.Carts = new HashSet<Carts>();
-        }
-    
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public Users()
+        //{
+        //    this.Carts = new HashSet<Carts>();
+        //}
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -48,8 +48,8 @@ namespace Entities.Models
         [StringLength(1)]
         public string Role { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Carts> Carts { get; set; }
-        public virtual RoleLookup Role_lookup { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<Carts> Carts { get; set; }
+        //public virtual RoleLookup Role_lookup { get; set; }
     }
 }
