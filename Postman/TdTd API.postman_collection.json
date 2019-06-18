@@ -1,0 +1,478 @@
+{
+	"info": {
+		"_postman_id": "dcdc13f9-f289-454b-9e6f-04c1c5ed18df",
+		"name": "TdTd API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Carts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/carts",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/carts/{{userId}}/{{stateMagnetId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"carts",
+						"{{userId}}",
+						"{{stateMagnetId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart By User Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/carts/{{userId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"carts",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Catagories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/catagories",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"catagories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Catagory By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/catagories/{{catagoryId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"catagories",
+						"{{catagoryId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Clothing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/clothing",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"clothing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Clothing By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/clothing/{{clothingId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"clothing",
+						"{{clothingId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Magnets",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/magnets",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"magnets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Magnet By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/magnets/{{stateMagnetId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"magnets",
+						"{{stateMagnetId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Roles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/roles",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Role by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/roles/{{roleId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"roles",
+						"{{roleId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Sizes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/sizes",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"sizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Size By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/sizes/{{sizeId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"sizes",
+						"{{sizeId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Sleeve lengths",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/sleeves",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"sleeves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sleeve length by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/sleeves/{{sleeveId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"sleeves",
+						"{{sleeveId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/users",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Size By Id Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{domain}}/users/{{userId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
