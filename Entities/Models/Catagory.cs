@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Entities.Models
 {
 
-    [Table("tadaatiedyetpc.catagory_lookup")]
+    [Table("tadaatiedyetpc.Catagory_Lookup")]
     public partial class Catagory
     {
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
-    [Table("tadaatiedyetpc.size_lookup")]
+    [Table("tadaatiedyetpc.Size_Lookup")]
     public partial class SizeLookup
     {
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

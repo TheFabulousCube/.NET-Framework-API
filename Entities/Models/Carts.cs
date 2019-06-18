@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models
 {
-    [Table("tadaatiedyetpc.cart")]
+    [Table("tadaatiedyetpc.Cart")]
     public partial class Carts
     {
         [Key]
