@@ -2,8 +2,11 @@ using Contracts;
 using LoggerService;
 using Repository;
 using System;
+using System.Web.Http;
+using TdtdAPI.Controllers;
 //using System.Web.Http;
 using Unity;
+using Unity.AspNet.WebApi;
 //using Unity.AspNet.WebApi;
 using Unity.Lifetime;
 
@@ -29,6 +32,7 @@ namespace TdtdAPI
         public static IUnityContainer Container => container.Value;
         #endregion
 
+
         /// <summary>
         /// Registers the type mappings with the Unity container.
         /// </summary>
@@ -43,13 +47,12 @@ namespace TdtdAPI
         {
             // NOTE: To load from web.config uncomment the line below.
             // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
+            //container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<ILoggerManager, LoggerManager>(new ContainerControlledLifetimeManager());
             container.RegisterType<IRepositoryWrapper, RepositoryWrapper>();
-
+            // moved to Startup to use that (HttpConfiguration) config instead
             //GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

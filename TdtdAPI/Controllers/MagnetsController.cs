@@ -19,6 +19,7 @@ namespace TdtdAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IHttpActionResult GetAllMagnets()
         {
             try
