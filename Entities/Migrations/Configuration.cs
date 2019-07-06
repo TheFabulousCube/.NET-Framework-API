@@ -10,6 +10,10 @@ namespace Entities.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+
+            //DbConfiguration.SetConfiguration(new MySql.Data.Entity.MySqlEFConfiguration());
+            //SetSqlGenerator(MySql.Data.Entity.MySqlProviderInvariantName.ProviderName, new MySql.Data.Entity.MySqlMigrationSqlGenerator());
+            //SetHistoryContextFactory(MySql.Data.Entity.MySqlProviderInvariantName.ProviderName, (connection, schema) => new MySql.Data.Entity.MySqlHistoryContext(connection, schema));
         }
 
         protected override void Seed(Entities.AuthContext context)
