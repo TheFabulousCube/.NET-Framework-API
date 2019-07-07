@@ -21,7 +21,15 @@ The **Repository Pattern** is working nice!  Since the magnets & T-shirts have c
 **Dependancy Injection** is easy in .NET Core. I had to institute Unity.  It's pretty nice, works for the Logger, too!  I just haven't used the Logger much yet.
 ***
 ## Change Log
+<<<<<<< HEAD
+<<<<<<< HEAD
 1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the [Deployment process to Jenkins](https://github.com/TheFabulousCube/.NET-Framework-API/blob/master/JenkinsSetUp.md). By doing that, I can 
+=======
+1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the Deployment process to Jenkins. By doing that, I can 
+>>>>>>> f9fe0ab... Changlog with Jenkins
+=======
+1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the [Deployment process to Jenkins](https://github.com/TheFabulousCube/.NET-Framework-API/blob/master/JenkinsSetUp.md). By doing that, I can 
+>>>>>>> 6e4628e... Added link to Jenkins documentation
           remove sensitive Production connections strings from here and build them at deployment time.
           A push to the _dev_ branch triggers a build/run tests.  If that passes, Jenkins merges the _dev_ branch onto the _qa_
           branch and calls **Deploy to QA**.  **Deploy to QA** does another build, creating the deployment package & deploys to

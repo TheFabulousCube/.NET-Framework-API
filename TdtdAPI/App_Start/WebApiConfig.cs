@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using LoggerService;
 using System.Web.Http;
+using System.Net.Http.Formatting;
+using Newtonsoft.Json.Serialization;
 
 namespace TdtdAPI
 {
@@ -29,6 +31,9 @@ namespace TdtdAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            JsonMediaTypeFormatter jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }
