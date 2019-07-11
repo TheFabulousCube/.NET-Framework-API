@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-
+<parameter name="AuthContext-Web.config Connection String" description="doesn't matter" defaultvalue="server=localhost;port=3307;user id=pipsplay;password=!PHWt6j5u+U%VDwG;persistsecurityinfo=True;database=tdtdapi_auth;SslMode=none" tags="">
 <parameter name="TaDaaTieDyeTPCEntities-Web.config Connection String" description="doesn't matter" defaultvalue="server=localhost;port=3307;user id=pipsplay;password=!PHWt6j5u+U%VDwG;persistsecurityinfo=True;database=TaDaaTieDyeTPC;SslMode=none" tags="">
 
   <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/connectionStrings/add[@name='TaDaaTieDyeTPCEntities']/@connectionString">

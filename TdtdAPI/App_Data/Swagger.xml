@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <assembly>
+    <name>TdtdAPI</name>
+  </assembly>
+  <members>
+    <member name="M:TdtdAPI.Controllers.MagnetsController.GetAllMagnets">
+      <summary>
+        Gets a list of all magnets from Swagger.xml
+      </summary>
+      <remarks>Nope annotations have nothing to do anymore.  On ly the XML</remarks>
+      <returns>All Magnets as a list</returns>
+      <response code="200">200 code is OK</response>
+    </member>
+    <member name="M:TdtdAPI.Controllers.MagnetsController.GetMagnetById(System.String)">
+      <summary>
+        Gets a specific magnet by id.
+      </summary>
+      <param name="id" examples="SMTN" example="SMAK" >IDs are "SM" + the state abbreviation
+      </param>
+      <response code="200"></response>
+      <response code="418">I'm a teapot??!!??</response>
+    </member>
+  </members>
+</doc>

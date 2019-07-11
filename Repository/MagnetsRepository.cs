@@ -8,6 +8,7 @@ namespace Repository
 {
     public class MagnetsRepository : RepositoryBase<Magnets>, IMagnetsRepository
     {
+
         public MagnetsRepository(RepositoryContext repositoryContext)
             : base(repositoryContext)
         {
@@ -34,5 +35,21 @@ namespace Repository
         //        .Where(c => c.ProdID == magnetId)
         //    };
         //}
+
+        public void CreateMagnet(Magnets magnet)
+        {
+            Create(magnet);
+        }
+
+        public void UpdateMagnet(Magnets dbMagnet, Magnets magnet)
+        {
+            Magnets.Map(dbMagnet, magnet);
+            Update(dbMagnet);
+        }
+
+        public void Updatemagnet(Magnets dbMagnet, Magnets magnet)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

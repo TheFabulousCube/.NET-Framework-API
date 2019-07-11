@@ -22,5 +22,17 @@ namespace Entities.Models
             Capital = magnet.Capital;
             Statehood = magnet.Statehood;
         }
+
+        public static void Map(Magnets dbMagnet, Magnets magnet)
+        {
+            dbMagnet.ProdId = magnet.ProdId;
+            dbMagnet.ProdPicture = magnet.ProdPicture;
+            dbMagnet.ProdPrice = magnet.ProdPrice;
+            dbMagnet.ProdQty = magnet.ProdQty;
+            dbMagnet.Catagory = magnet.Catagory;
+            dbMagnet.ProdName = magnet.ProdName;
+            dbMagnet.Capital = magnet.Capital;
+            dbMagnet.Statehood = magnet.Statehood;
+        }
     }
 }

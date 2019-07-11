@@ -1,8 +1,11 @@
 ﻿using Contracts;
+using Entities.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace TdtdAPI.Controllers
 {
@@ -18,7 +21,22 @@ namespace TdtdAPI.Controllers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Lookup table for sleeve lengths.
+        /// </summary>
+        /// <remarks>
+        /// ### REMARKS ###
+        /// - This allows the user to search for only the
+        /// specific sleeve length.
+        /// - But it will **never** change and might be better
+        /// as an enum.
+        /// - Get and GetById are really the only useful calls for this
+        /// </remarks>
+        /// <returns>An array of all sleeve lengths</returns>
+        /// <response code="200">Returns the list of available sleeve lengths</response>
+        /// <response code="500">If there is a database error</response> 
         [HttpGet]
+        [ResponseType(typeof(List<SleeveLookup>))]
         public IHttpActionResult GetAllSleeves()
         {
             try

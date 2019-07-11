@@ -1,8 +1,11 @@
 ﻿using Contracts;
+using Entities.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace TdtdAPI.Controllers
 {
@@ -18,7 +21,20 @@ namespace TdtdAPI.Controllers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Gets a list of all the rows in the cart table
+        /// </summary>
+        /// <remarks>
+        /// ### REMARKS ###
+        /// - Each row represents the Qty of a specific item (ProdId) for a specific User
+        /// - Not generally useful as a public API
+        /// - Only needed for accounting?
+        /// </remarks>
+        /// <returns>An array of all sleeve lengths</returns>
+        /// <response code="200">Returns the list of available sleeve lengths</response>
+        /// <response code="500">If there is a database error</response> 
         [HttpGet]
+        [ResponseType(typeof(List<Carts>))]
         public IHttpActionResult GetAllCarts()
         {
             try
@@ -34,7 +50,22 @@ namespace TdtdAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Gets a specific line item from a cart
+        /// - this isn't really usefull?
+        /// </summary>
+        /// <param name="userId">Id of the user this cart is assigned to</param>
+        /// <param name="prodId">Product id of the item</param>
+        /// <remarks>
+        /// This would be needed as a PUT to update the Qty.
+        ///
+        /// </remarks>
+        /// <returns>The qty of a line item for a specific user</returns>
+        /// <response code="200">Returns the qty of a line item for a specific user</response>
+        /// <response code="400">If the item is null</response> 
+        /// <response code="500">If there is a database error</response>    
         [HttpGet]
+        [ResponseType(typeof(Carts))]
         [Route("api/carts/{userId}/{prodID}")]
         public IHttpActionResult GetCartById(int userId, string prodId)
         {
@@ -56,7 +87,21 @@ namespace TdtdAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Gets a shopping cart for a specific user
+        /// </summary>
+        /// <param name="id">Id of the user for this cart</param>
+        /// <remarks>
+        /// ### REMARKS ###
+        /// - Needed to display a cart
+        /// - Needed for checkout
+        /// </remarks>
+        /// <returns>The qty of a line item for a specific user</returns>
+        /// <response code="200">Returns an array of products and the qty of each in their cart</response>
+        /// <response code="400">If the item is null</response> 
+        /// <response code="500">If there is a database error</response>    
         [HttpGet]
+        [ResponseType(typeof(List<Carts>))]
         [Route("api/carts/{id}")]
         public IHttpActionResult GetCartByUser(int id)
         {
