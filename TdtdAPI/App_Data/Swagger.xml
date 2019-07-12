@@ -1,25 +1,193 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>TdtdAPI</name>
-  </assembly>
-  <members>
-    <member name="M:TdtdAPI.Controllers.MagnetsController.GetAllMagnets">
-      <summary>
-        Gets a list of all magnets from Swagger.xml
-      </summary>
-      <remarks>Nope annotations have nothing to do anymore.  On ly the XML</remarks>
-      <returns>All Magnets as a list</returns>
-      <response code="200">200 code is OK</response>
-    </member>
-    <member name="M:TdtdAPI.Controllers.MagnetsController.GetMagnetById(System.String)">
-      <summary>
-        Gets a specific magnet by id.
-      </summary>
-      <param name="id" examples="SMTN" example="SMAK" >IDs are "SM" + the state abbreviation
-      </param>
-      <response code="200"></response>
-      <response code="418">I'm a teapot??!!??</response>
-    </member>
-  </members>
+    <assembly>
+        <name>TdtdAPI</name>
+    </assembly>
+    <members>
+        <member name="T:TdtdAPI.UnityConfig">
+            <summary>
+            Specifies the Unity configuration for the main container.
+            </summary>
+        </member>
+        <member name="P:TdtdAPI.UnityConfig.Container">
+            <summary>
+            Configured Unity Container.
+            </summary>
+        </member>
+        <member name="M:TdtdAPI.UnityConfig.RegisterTypes(Unity.IUnityContainer)">
+            <summary>
+            Registers the type mappings with the Unity container.
+            </summary>
+            <param name="container">The unity container to configure.</param>
+            <remarks>
+            There is no need to register concrete types such as controllers or
+            API controllers (unless you want to change the defaults), as Unity
+            allows resolving a concrete type even if it was not previously
+            registered.
+            </remarks>
+        </member>
+        <member name="T:TdtdAPI.UnityWebApiActivator">
+            <summary>
+            Provides the bootstrapping for integrating Unity with WebApi when it is hosted in ASP.NET.
+            </summary>
+        </member>
+        <member name="M:TdtdAPI.UnityWebApiActivator.Start">
+            <summary>
+            Integrates Unity when the application starts.
+            </summary>
+        </member>
+        <member name="M:TdtdAPI.UnityWebApiActivator.Shutdown">
+            <summary>
+            Disposes the Unity container when the application is shut down.
+            </summary>
+        </member>
+        <member name="M:TdtdAPI.Controllers.CartsController.GetAllCarts">
+            <summary>
+            Gets a list of all the rows in the cart table
+            </summary>
+            <remarks>
+            ### REMARKS ###
+            - Each row represents the Qty of a specific item (ProdId) for a specific User
+            - Not generally useful as a public API
+            - Only needed for accounting?
+            </remarks>
+            <returns>An array of all sleeve lengths</returns>
+            <response code="200">Returns the list of available sleeve lengths</response>
+            <response code="500">If there is a database error</response> 
+        </member>
+        <member name="M:TdtdAPI.Controllers.CartsController.GetCartById(System.Int32,System.String)">
+             <summary>
+             Gets a specific line item from a cart
+             - this isn't really usefull?
+             </summary>
+             <param name="userId">Id of the user this cart is assigned to</param>
+             <param name="prodId">Product id of the item</param>
+             <remarks>
+             This would be needed as a PUT to update the Qty.
+            
+             </remarks>
+             <returns>The qty of a line item for a specific user</returns>
+             <response code="200">Returns the qty of a line item for a specific user</response>
+             <response code="400">If the item is null</response> 
+             <response code="500">If there is a database error</response>    
+        </member>
+        <member name="M:TdtdAPI.Controllers.CartsController.GetCartByUser(System.Int32)">
+            <summary>
+            Gets a shopping cart for a specific user
+            </summary>
+            <param name="id">Id of the user for this cart</param>
+            <remarks>
+            ### REMARKS ###
+            - Needed to display a cart
+            - Needed for checkout
+            </remarks>
+            <returns>The qty of a line item for a specific user</returns>
+            <response code="200">Returns an array of products and the qty of each in their cart</response>
+            <response code="400">If the item is null</response> 
+            <response code="500">If there is a database error</response>    
+        </member>
+        <member name="M:TdtdAPI.Controllers.MagnetsController.GetAllMagnets">
+             <summary>
+             Gets a list of all magnets.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /Magnets
+            
+             </remarks>
+             <returns>An array of all State Magnets</returns>
+             <response code="200">Returns the list of Magnets</response>
+             <response code="500">If there is a database error</response> 
+        </member>
+        <member name="M:TdtdAPI.Controllers.MagnetsController.GetMagnetById(System.String)">
+             <summary>
+             Gets a specific magnet based on it's ID
+             </summary>
+             <param name="id">Ids are in the format "SM" + the 2 letter state abbreviation</param>
+             <remarks>
+             State magnet Ids are **generally** in the format "SM" + the 2 letter state abbreviation 
+             Sample request:
+            
+                 GET /Magnets/SMTN
+            
+             </remarks>
+             <returns>All the information about the magnet</returns>
+             <response code="200">Returns the magnet</response>
+             <response code="400">If the item is null</response> 
+             <response code="500">If there is a database error</response>    
+        </member>
+        <member name="M:TdtdAPI.Controllers.MagnetsController.CreateMagnet(Entities.Models.Magnets)">
+             <summary>
+             [Restricted] Adds a new State Magnet to the product base
+             </summary>
+             <param name="magnet">
+             
+             {
+                 "prodId": "SMXX",
+                 "prodPicture": "/images/SMXX.png",
+                 "prodPrice": 1.99,
+                 "prodQty": 10,
+                 "catagory": "Magnets",
+                 "prodName": "SampleStateName",
+                 "capital": "SampleCapital",
+                 "statehood": "June 1, 1796"
+             }           
+             
+             </param>
+             <remarks>State magnet Ids are **generally** in the format "SM" + the 2 letter state abbreviation
+               Sample request:
+            
+             POST /Magnets
+             {
+                 "prodId": "SMXX",
+                 "prodPicture": "/images/SMXX.png",
+                 "prodPrice": 1.99,
+                 "prodQty": 10,
+                 "catagory": "Magnets",
+                 "prodName": "SampleStateName",
+                 "capital": "SampleCapital",
+                 "statehood": "June 1, 1796"
+             }           
+            
+             </remarks>
+             <returns>All the information about the magnet</returns>
+             <response code="201">Returns the new magnet</response>
+             <response code="400">If the item is null or invalid</response> 
+             <response code="500">If there is a database error</response>  
+        </member>
+        <member name="M:TdtdAPI.Controllers.SizeController.GetAllSizes">
+            <summary>
+            Lookup table for clothing sizes.
+            Usefull for offering a selection of sizes
+            </summary>
+            <remarks>
+            ### REMARKS ###
+            - This allows the user to search for only the
+            specific sizes they want.
+            - But it will **never** change and might be better
+            as an enum.
+            - Get and GetById are really the only useful calls for this
+            </remarks>
+            <returns>An array of all sizes, </returns>
+            <response code="200">Returns the list of available sizes,</response>
+            <response code="500">If there is a database error</response> 
+        </member>
+        <member name="M:TdtdAPI.Controllers.SleeveController.GetAllSleeves">
+            <summary>
+            Lookup table for sleeve lengths.
+            </summary>
+            <remarks>
+            ### REMARKS ###
+            - This allows the user to search for only the
+            specific sleeve length.
+            - But it will **never** change and might be better
+            as an enum.
+            - Get and GetById are really the only useful calls for this
+            </remarks>
+            <returns>An array of all sleeve lengths</returns>
+            <response code="200">Returns the list of available sleeve lengths</response>
+            <response code="500">If there is a database error</response> 
+        </member>
+    </members>
 </doc>
