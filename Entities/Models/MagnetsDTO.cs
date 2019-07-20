@@ -34,5 +34,9 @@ namespace Entities.Models
             dbMagnet.Capital = magnet.Capital;
             dbMagnet.Statehood = magnet.Statehood;
         }
+        public bool IsMagnet()
+        {
+            return this.Catagory == LookUps.Catagory.magnets.ToString();
+        }
     }
 }

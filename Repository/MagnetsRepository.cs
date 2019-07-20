@@ -47,9 +47,9 @@ namespace Repository
             Update(dbMagnet);
         }
 
-        public void Updatemagnet(Magnets dbMagnet, Magnets magnet)
+        public void DeleteMagnet(Magnets magnet)
         {
-            throw new System.NotImplementedException();
+            Delete(magnet);
         }
     }
 }

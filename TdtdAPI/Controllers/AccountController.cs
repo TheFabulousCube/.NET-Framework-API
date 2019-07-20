@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Repository;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace TdtdAPI.Controllers
 {
@@ -17,8 +18,37 @@ namespace TdtdAPI.Controllers
         }
 
         // POST api/Account/Register
-        [AllowAnonymous]
+        /// <summary>
+        /// [Restricted] Adds a new Authorized account to the API
+        /// </summary>
+        /// <param name="userModel">
+        /// 
+        /// {
+        ///     "userName": "userName",
+        ///     "password": "password",
+        ///     "confirmPassword": "password
+        /// }           
+        /// 
+        /// </param>
+        /// <remarks>This call registers a user for the API.
+        /// This is different from the Users account.  
+        ///   Sample request:
+        ///
+        /// POST /Account/Register
+        /// {
+        ///     "userName": "userName",
+        ///     "password": "password",
+        ///     "confirmPassword": "password
+        /// }               
+        ///
+        /// </remarks>
+        /// <returns>All the information about the magnet</returns>
+        /// <response code="201">Returns the new authorized API account</response>
+        /// <response code="400">If the item is null,invalid, or userName is already taken</response> 
+        /// <response code="500">If there is a database error</response> 
+        [Authorize]
         [Route("Register")]
+        [ResponseType(typeof(UserModel))]
         public async Task<IHttpActionResult> Register(UserModel userModel)
         {
             if (!ModelState.IsValid)

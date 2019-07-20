@@ -9,6 +9,7 @@ namespace Contracts
         Magnets GetMagnetById(string magnetId);
         //Magnets GetMagnetsInACart(string magnetId);
         void CreateMagnet(Magnets magnet);
-        void Updatemagnet(Magnets dbMagnet, Magnets magnet);
+        void UpdateMagnet(Magnets dbMagnet, Magnets magnet);
+        void DeleteMagnet(Magnets magnet);
     }
 }

@@ -68,6 +68,11 @@ namespace Repository
             return this.RepositoryContext.Set<T>().Where(expression).AsNoTracking();
         }
 
+        public void RemoveByCondition(Expression<Func<T, bool>> expression)
+        {
+            this.RepositoryContext.Set<T>().RemoveRange(FindByCondition(expression));
+        }
+
         public void Create(T entity)
         {
             this.RepositoryContext.Set<T>().Add(entity);

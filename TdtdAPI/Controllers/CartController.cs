@@ -9,12 +9,20 @@ using System.Web.Http.Description;
 
 namespace TdtdAPI.Controllers
 {
+    /// <summary>
+    /// This is a summary on the class (more useful)
+    /// </summary>
     [Route("api/carts")]
     public class CartsController : ApiController
     {
         private ILoggerManager _logger;
         private IRepositoryWrapper _repository;
 
+        /// <summary>
+        ///  This is a summary on the controler
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="repository"></param>
         public CartsController(ILoggerManager logger, IRepositoryWrapper repository)
         {
             _logger = logger;
@@ -120,6 +128,85 @@ namespace TdtdAPI.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Something went wrong inside the {MethodBase.GetCurrentMethod().Name} action: {ex.Message}");
+                return InternalServerError(ex);
+            }
+        }
+
+        /// <summary>
+        /// [Restricted] AddToCart
+        /// </summary>
+        /// <param name="cart">
+        /// From Body:        
+        ///  {
+        ///     "userId": int,
+        ///     "prodID": {string for Magnets, int for Clothing},
+        ///     "qty": 1
+        ///  }        /// 
+        /// </param>
+        /// <remarks>
+        ///   Quantities less than or equal 0 will remove the item from the cart  
+        ///   Quantities greater than available will be truncated
+        ///   (You can check available quantity by calling **GetMagnetById(string id)**)
+        ///   
+        ///   Sample request:
+        ///
+        /// POST /Carts
+        /// {
+        ///     "userId": 2,
+        ///     "prodID": "2003",
+        ///     "qty": 1
+        /// }
+        ///
+        /// </remarks>
+        /// <returns>The same cart with updated quantity</returns>
+        /// <response code="201">Returns the cart with updated qty</response>
+        /// <response code="400">If the item is null or invalid</response> 
+        /// <response code="500">If there is a database error</response> 
+        [HttpPost]
+        [Authorize]
+        [ResponseType(typeof(Carts))]
+        public IHttpActionResult AddToCart([FromBody]Carts cart)
+        {
+            try
+            {
+
+                var newCart = _repository.Cart.AddToCart(cart);
+                return Ok(newCart);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        /// <summary>
+        /// [Restricted] EmptyCart (By user Id)
+        /// </summary>
+        /// <param name="id">
+        ///     "id": int
+        /// </param>
+        /// <remarks>
+        /// Completely removes ALL items from a user's cart
+        /// Sample request:
+        ///
+        ///     DELETE /Carts/{userId}
+        ///
+        /// </remarks>
+        /// <response code="201"></response>
+        /// <response code="400">If the item is null or invalid</response> 
+        /// <response code="500">If there is a database error</response> 
+        [HttpDelete]
+        [Authorize]
+        [Route("api/carts/{id}")]
+        public IHttpActionResult EmptyCart(int id)
+        {
+            try
+            {
+                _repository.Cart.EmptyCart(id);
+                return Ok($"Removed all items from user {id}'s cart");
+            }
+            catch (Exception ex)
+            {
                 return InternalServerError(ex);
             }
         }
