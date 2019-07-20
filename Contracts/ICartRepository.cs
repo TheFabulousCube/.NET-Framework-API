@@ -12,5 +12,17 @@ namespace Contracts
         IEnumerable<Carts> GetAllCarts();
         Carts GetCartById(int userId, string prodId);
         IEnumerable<Carts> GetCartsByUser(int userId);
+        void EmptyCart(int user); // User user?
+        /**************************************
+         * Combine AddToCart() & UpdateQty()
+         * into an Upsert()?
+         * ***********************************/
+
+        // From MVC:
+        Carts AddToCart(Carts cart);
+        void RemoveFromCart(Carts cart);
+        List<Carts> GetCart(Users user);
+        //string UpdateQTY(Carts item);
+        //ActionResult Checkout();
     }
 }

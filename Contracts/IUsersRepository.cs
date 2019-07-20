@@ -7,5 +7,7 @@ namespace Contracts
     {
         IEnumerable<Users> GetAllUsers();
         Users GetUserById(int id);
+        Users GetUserByUserName(string userName);
+        void CreateUser(Users user);
     }
 }

@@ -19,8 +19,10 @@ namespace TdtdAPI
             ConfigureOAuth(app);
             var config = new HttpConfiguration();
             WebApiConfig.Register(config);
+            SwaggerConfig.Register(config);
             //Moved this from UnityConfig to use this config instead of GlobalConfiguration...
             config.DependencyResolver = new UnityDependencyResolver(UnityConfig.Container);
+
             app.UseWebApi(config);
         }
 

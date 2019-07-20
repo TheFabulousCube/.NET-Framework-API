@@ -22,11 +22,8 @@ The **Repository Pattern** is working nice!  Since the magnets & T-shirts have c
 ***
 ## Change Log
 <<<<<<< HEAD
-<<<<<<< HEAD
-1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the [Deployment process to Jenkins](https://github.com/TheFabulousCube/.NET-Framework-API/blob/master/JenkinsSetUp.md). By doing that, I can 
-=======
+1.1.0.0 - OAuth & Swagger
 1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the Deployment process to Jenkins. By doing that, I can 
->>>>>>> f9fe0ab... Changlog with Jenkins
 =======
 1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the [Deployment process to Jenkins](https://github.com/TheFabulousCube/.NET-Framework-API/blob/master/JenkinsSetUp.md). By doing that, I can 
 >>>>>>> 6e4628e... Added link to Jenkins documentation

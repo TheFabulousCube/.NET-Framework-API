@@ -6,88 +6,366 @@
 	},
 	"item": [
 		{
-			"name": "Get All Carts",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Get All Carts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/carts",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Get Cart By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/carts/{{userId}}/{{stateMagnetId}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{userId}}",
+								"{{stateMagnetId}}"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{domain}}/carts",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"carts"
-					]
+				{
+					"name": "Get Cart By User Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/carts/{{userId}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "All the calls related to Cart functions"
 		},
 		{
-			"name": "Get Cart By Id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "Clothing",
+			"item": [
+				{
+					"name": "Get All Clothing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/clothing",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"clothing"
+							]
+						}
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/carts/{{userId}}/{{stateMagnetId}}",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"carts",
-						"{{userId}}",
-						"{{stateMagnetId}}"
-					]
+				{
+					"name": "Get Clothing By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/clothing/{{clothingId}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"clothing",
+								"{{clothingId}}"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "All the calls related to Clothing"
 		},
 		{
-			"name": "Get Cart By User Id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "Magnets",
+			"item": [
+				{
+					"name": "Get All Magnets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/magnets",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"magnets"
+							]
+						}
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+				{
+					"name": "Get Magnet By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/magnets/WHAT",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"magnets",
+								"WHAT"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{domain}}/carts/{{userId}}",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"carts",
-						"{{userId}}"
-					]
+				{
+					"name": "Post new Magnet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"prodId\": \"THAT\",\r\n        \"prodPicture\": \"/Images/magnets/AL.jpg\",\r\n        \"prodPrice\": 1.99,\r\n        \"prodQty\": 10,\r\n        \"catagory\": \"magnets\",\r\n        \"prodName\": \"Alabama\",\r\n        \"capital\": \"Montgomery\",\r\n        \"statehood\": \"December 14, 1819\"\r\n    }"
+						},
+						"url": {
+							"raw": "{{domain}}/api/magnets",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"magnets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Magnet",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prodId\": \"WHAT\",\r\n    \"prodPicture\": \"/Images/magnets/AL.jpg\",\r\n    \"prodPrice\": 1.99,\r\n    \"prodQty\": 100,\r\n    \"catagory\": \"magnets\",\r\n    \"prodName\": \"Alabama\",\r\n    \"capital\": \"Montgomery\",\r\n    \"statehood\": \"December 14, 1819\"\r\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/magnets/WHAT",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"magnets",
+								"WHAT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Magnet",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prodId\": \"WHAT\",\r\n    \"prodPicture\": \"/Images/magnets/AL.jpg\",\r\n    \"prodPrice\": 1.99,\r\n    \"prodQty\": 100,\r\n    \"catagory\": \"magnets\",\r\n    \"prodName\": \"Alabama\",\r\n    \"capital\": \"Montgomery\",\r\n    \"statehood\": \"December 14, 1819\"\r\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/magnets/WHAT",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"magnets",
+								"WHAT"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"description": "All the calls related to Magnets"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Includes the calls related to the user\nThis will include a display version for GET Cart by Id\nThis is the end user, not the application user"
 		},
 		{
 			"name": "Get All Catagories",
@@ -105,11 +383,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/catagories",
+					"raw": "{{domain}}/api/catagories",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"catagories"
 					]
 				}
@@ -132,123 +411,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/catagories/{{catagoryId}}",
+					"raw": "{{domain}}/api/catagories/{{catagoryId}}",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"catagories",
 						"{{catagoryId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Clothing",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/clothing",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"clothing"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Clothing By Id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/clothing/{{clothingId}}",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"clothing",
-						"{{clothingId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Magnets",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/magnets",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"magnets"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Magnet By Id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/magnets/{{stateMagnetId}}",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"magnets",
-						"{{stateMagnetId}}"
 					]
 				}
 			},
@@ -270,11 +440,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/roles",
+					"raw": "{{domain}}/api/roles",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"roles"
 					]
 				}
@@ -297,11 +468,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/roles/{{roleId}}",
+					"raw": "{{domain}}/api/roles/{{roleId}}",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"roles",
 						"{{roleId}}"
 					]
@@ -325,11 +497,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/sizes",
+					"raw": "{{domain}}/api/sizes",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"sizes"
 					]
 				}
@@ -352,11 +525,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/sizes/{{sizeId}}",
+					"raw": "{{domain}}/api/sizes/{{sizeId}}",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"sizes",
 						"{{sizeId}}"
 					]
@@ -380,11 +554,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/sleeves",
+					"raw": "{{domain}}/api/sleeves",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"sleeves"
 					]
 				}
@@ -407,40 +582,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/sleeves/{{sleeveId}}",
+					"raw": "{{domain}}/api/sleeves/{{sleeveId}}",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"sleeves",
 						"{{sleeveId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Users",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{domain}}/users",
-					"host": [
-						"{{domain}}"
-					],
-					"path": [
-						"users"
 					]
 				}
 			},
@@ -462,13 +611,148 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/users/{{userId}}",
+					"raw": "{{domain}}/api/users/{{userId}}",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
+						"api",
 						"users",
 						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Account/Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"administrator@API\",\r\n  \"password\": \"Test@123\",\r\n  \"confirmPassword\": \"Test@123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{domain}}/api/Account/Register",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TOKEN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fae67732-cf88-4f74-9785-e4550cef0c85",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"pm.environment.set(\"AuthToken\", data.access_token);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"tests[\"TokenType of correct type\"] = data.token_type === \"bearer\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "userName",
+							"value": "{{userName}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/TOKEN",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"TOKEN"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserInfo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "_GilNFclAF69trvtzpiZeQcq4a3bHlajNhGDhIGMRK9KkIANXHVdkOsFyZSyXYJA_Cde2FVPuOZ26lb3wxwzrynPwmcnoImk07gZ7xBkHwPYEbhJxdpvgGEzN-1Z_OahzYYF_zZs6SL4BnMUf32ypZnG6vQR7mpCJBYZt9tZAjU37jKFSgBMNF9VE5ts8Z4N8-s3AtYU3NLVO8cjdY3YzijKfbUFhJbQdDiRkkdhILhorDCeZSkcn93MedkR4J5ujnVo41nICXBps6sS7M0HHovEsHXowXS9c610B4WbILz7SB3bC9Xa11uZF94SHiSqVLYTCWefgXQxPCuh6FL99rC3uUoemREE1kiKEiyaLSFyRKeaUI8l7xgHniovl5XdkICmX-u_pSGJ7Jx6hBWXldbG8Wz6nL3Qqf59--IFGtbGo-asGjiUVHWVpQLHSN3eCMtUTD7NsBNXp69co9n3vpfSL1EpsWUeWsk0GJkmr0IKCxj5v0PmwnF6wq8HN6Cv",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"administrator@API\",\r\n  \"password\": \"Test@123\",\r\n  \"confirmPassword\": \"Test@123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{domain}}/api/Account/UserInfo",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"Account",
+						"UserInfo"
 					]
 				}
 			},

@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AuthContext-Web.config Connection String" description="OAuth database" defaultvalue="server=localhost;port=3307;user id=pipsplay;password=!PHWt6j5u+U%VDwG;persistsecurityinfo=True;database=tdtdapi_auth;SslMode=none" tags="">
 
+    <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/connectionStrings/add[@name='TaDaaTieDyeTPCEntities']/@connectionString"/>
 
-<parameter name="TaDaaTieDyeTPCEntities-Web.config Connection String" description="doesn't matter" defaultvalue="server=localhost;port=3307;user id=pipsplay;password=!PHWt6j5u+U%VDwG;persistsecurityinfo=True;database=TaDaaTieDyeTPC;SslMode=none" tags="">
+  </parameter>
 
-  <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/connectionStrings/add[@name='TaDaaTieDyeTPCEntities']/@connectionString">
+  <parameter name="TaDaaTieDyeTPCEntities-Web.config Connection String" description="Products database" defaultvalue="server=localhost;port=3307;user id=pipsplay;password=!PHWt6j5u+U%VDwG;persistsecurityinfo=True;database=TaDaaTieDyeTPC;SslMode=none" tags="">
 
-  </parameterentry>
+    <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/connectionStrings/add[@name='TaDaaTieDyeTPCEntities']/@connectionString"/>
 
-</parameter>
+  </parameter>
+</parameters>

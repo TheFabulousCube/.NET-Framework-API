@@ -8,6 +8,8 @@ namespace Contracts
         IEnumerable<Magnets> GetAllMagnets();
         Magnets GetMagnetById(string magnetId);
         //Magnets GetMagnetsInACart(string magnetId);
-        //Magnets GetMagnetById(string id);
+        void CreateMagnet(Magnets magnet);
+        void UpdateMagnet(Magnets dbMagnet, Magnets magnet);
+        void DeleteMagnet(Magnets magnet);
     }
 }

@@ -13,6 +13,11 @@ namespace Repository
         {
         }
 
+        public void CreateUser(Users user)
+        {
+            Create(user);
+        }
+
         public IEnumerable<Users> GetAllUsers()
         {
             return FindAll()
@@ -23,6 +28,12 @@ namespace Repository
         public Users GetUserById(int id)
         {
             return FindByCondition(u => u.Id.Equals(id))
+                .FirstOrDefault();
+        }
+
+        public Users GetUserByUserName(string userName)
+        {
+            return FindByCondition(u => u.Username.Equals(userName))
                 .FirstOrDefault();
         }
     }

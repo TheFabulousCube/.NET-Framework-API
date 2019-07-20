@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Serialization;
+using Swashbuckle.Application;
+using System;
 using System.Linq;
-using LoggerService;
-using System.Web.Http;
 using System.Net.Http.Formatting;
-using Newtonsoft.Json.Serialization;
+using System.Web.Http;
 
 namespace TdtdAPI
 {
@@ -31,6 +30,17 @@ namespace TdtdAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            /*****************************************************************************************
+            // Instead: SwaggerConfig.Register(config);
+            *****************************************************************************************/
+            //config.EnableSwagger(c =>
+            //{
+            //    c.SingleApiVersion("v1", "TdtdApi");
+            //    c.PrettyPrint();
+            //    c.IncludeXmlComments(String.Format(@"{0}\App_Data\Swagger.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+            //})
+            //.EnableSwaggerUi();
 
             JsonMediaTypeFormatter jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
