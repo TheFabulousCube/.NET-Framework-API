@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -37,6 +38,19 @@ namespace Entities.Models
         public bool IsMagnet()
         {
             return this.Catagory == LookUps.Catagory.magnets.ToString();
+        }
+
+        public override string ToString()
+        {
+            return ($"ProdId = {ProdId}" +
+                    $"\nProdPicture = { ProdPicture}" +
+                    $"\nProdPrice = {ProdPrice}" +
+                    $"\nProdQty = {ProdQty}" +
+                    $"\nCatagory = {Catagory}" +
+                    $"\nProdName = {ProdName}" +
+                    $"\nCapital = {Capital}" +
+                    $"\nStatehood = {Statehood}");
+                    
         }
     }
 }

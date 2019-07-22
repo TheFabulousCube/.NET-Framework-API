@@ -29,6 +29,7 @@ namespace Repository
             else
             {
                 dbCart.Qty = cart.Qty;
+                Update(cart);
             }
             return FindByCondition(c => c.UserId == cart.UserId && c.ProdID == cart.ProdID).FirstOrDefault();
         }

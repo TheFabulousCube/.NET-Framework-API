@@ -36,9 +36,10 @@ namespace Repository
         //    };
         //}
 
-        public void CreateMagnet(Magnets magnet)
+        public Magnets CreateMagnet(Magnets magnet)
         {
             Create(magnet);
+            return FindByCondition(m => m.ProdId == magnet.ProdId).FirstOrDefault();
         }
 
         public void UpdateMagnet(Magnets dbMagnet, Magnets magnet)
@@ -49,7 +50,7 @@ namespace Repository
 
         public void DeleteMagnet(Magnets magnet)
         {
-            Delete(magnet);
+            Delete(magnet);            
         }
     }
 }
