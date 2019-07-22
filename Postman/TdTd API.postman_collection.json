@@ -94,6 +94,77 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Empty Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/carts/{{userId}}",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add To Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userId\":19,\n\t\"prodID\":\"SMKY\",\n\t\"qty\":7\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/api/carts",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "All the calls related to Cart functions"
@@ -215,14 +286,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{domain}}/api/magnets/WHAT",
+							"raw": "{{domain}}/api/magnets/THAT",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"magnets",
-								"WHAT"
+								"THAT"
 							]
 						}
 					},
@@ -236,7 +307,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "{{AuthToken}}",
 									"type": "string"
 								}
 							]
@@ -245,8 +316,8 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -270,7 +341,14 @@
 					"name": "Update Magnet",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [
@@ -282,17 +360,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"prodId\": \"WHAT\",\r\n    \"prodPicture\": \"/Images/magnets/AL.jpg\",\r\n    \"prodPrice\": 1.99,\r\n    \"prodQty\": 100,\r\n    \"catagory\": \"magnets\",\r\n    \"prodName\": \"Alabama\",\r\n    \"capital\": \"Montgomery\",\r\n    \"statehood\": \"December 14, 1819\"\r\n}"
+							"raw": "{\r\n  \"prodId\": \"SMTN\",\r\n  \"prodPicture\": \"/Images/magnets/TN.jpg\",\r\n  \"prodPrice\": 1.99,\r\n  \"prodQty\": 15,\r\n  \"catagory\": \"magnets\",\r\n  \"prodName\": \"Tennessee\",\r\n  \"capital\": \"Nashville\",\r\n  \"statehood\": \"June 1, 1796\"\r\n}"
 						},
 						"url": {
-							"raw": "{{domain}}/api/magnets/WHAT",
+							"raw": "{{domain}}/api/magnets/SMTN",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"magnets",
-								"WHAT"
+								"SMTN"
 							]
 						}
 					},
@@ -302,29 +380,36 @@
 					"name": "Delete Magnet",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AuthToken}}",
+									"type": "string"
+								}
+							]
 						},
-						"method": "PUT",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"prodId\": \"WHAT\",\r\n    \"prodPicture\": \"/Images/magnets/AL.jpg\",\r\n    \"prodPrice\": 1.99,\r\n    \"prodQty\": 100,\r\n    \"catagory\": \"magnets\",\r\n    \"prodName\": \"Alabama\",\r\n    \"capital\": \"Montgomery\",\r\n    \"statehood\": \"December 14, 1819\"\r\n}"
+							"raw": "{\r\n    \"prodId\": \"THAT\",\r\n    \"prodPicture\": \"/Images/magnets/AL.jpg\",\r\n    \"prodPrice\": 1.99,\r\n    \"prodQty\": 10,\r\n    \"catagory\": \"magnets\",\r\n    \"prodName\": \"Alabama\",\r\n    \"capital\": \"Montgomery\",\r\n    \"statehood\": \"December 14, 1819\"\r\n}"
 						},
 						"url": {
-							"raw": "{{domain}}/api/magnets/WHAT",
+							"raw": "{{domain}}/api/magnets/THAT",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"magnets",
-								"WHAT"
+								"THAT"
 							]
 						}
 					},

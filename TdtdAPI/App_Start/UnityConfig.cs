@@ -12,9 +12,6 @@ using Unity.Lifetime;
 
 namespace TdtdAPI
 {
-    /// <summary>
-    /// Specifies the Unity configuration for the main container.
-    /// </summary>
     public static class UnityConfig
     {
         #region Unity Container
@@ -26,9 +23,6 @@ namespace TdtdAPI
               return container;
           });
 
-        /// <summary>
-        /// Configured Unity Container.
-        /// </summary>
         public static IUnityContainer Container => container.Value;
         #endregion
 
@@ -52,8 +46,6 @@ namespace TdtdAPI
             // TODO: Register your type's mappings here.
             container.RegisterType<ILoggerManager, LoggerManager>(new ContainerControlledLifetimeManager());
             container.RegisterType<IRepositoryWrapper, RepositoryWrapper>();
-            // moved to Startup to use that (HttpConfiguration) config instead
-            //GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
 }

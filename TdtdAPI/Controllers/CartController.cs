@@ -60,12 +60,11 @@ namespace TdtdAPI.Controllers
 
         /// <summary>
         /// Gets a specific line item from a cart
-        /// - this isn't really usefull?
         /// </summary>
         /// <param name="userId">Id of the user this cart is assigned to</param>
         /// <param name="prodId">Product id of the item</param>
         /// <remarks>
-        /// This would be needed as a PUT to update the Qty.
+        /// This would be useful as a PUT to update the Qty.
         ///
         /// </remarks>
         /// <returns>The qty of a line item for a specific user</returns>
@@ -73,8 +72,8 @@ namespace TdtdAPI.Controllers
         /// <response code="400">If the item is null</response> 
         /// <response code="500">If there is a database error</response>    
         [HttpGet]
+        [Route("api/carts/{userId}/{prodID}", Name = "CartById")]
         [ResponseType(typeof(Carts))]
-        [Route("api/carts/{userId}/{prodID}")]
         public IHttpActionResult GetCartById(int userId, string prodId)
         {
             try
@@ -133,7 +132,7 @@ namespace TdtdAPI.Controllers
         }
 
         /// <summary>
-        /// [Restricted] AddToCart
+        /// [Restricted] AddToCart (Upsert)
         /// </summary>
         /// <param name="cart">
         /// From Body:        
@@ -141,7 +140,7 @@ namespace TdtdAPI.Controllers
         ///     "userId": int,
         ///     "prodID": {string for Magnets, int for Clothing},
         ///     "qty": 1
-        ///  }        /// 
+        ///  } 
         /// </param>
         /// <remarks>
         ///   Quantities less than or equal 0 will remove the item from the cart  
@@ -162,16 +161,28 @@ namespace TdtdAPI.Controllers
         /// <response code="201">Returns the cart with updated qty</response>
         /// <response code="400">If the item is null or invalid</response> 
         /// <response code="500">If there is a database error</response> 
-        [HttpPost]
+        [HttpPut]
         [Authorize]
         [ResponseType(typeof(Carts))]
         public IHttpActionResult AddToCart([FromBody]Carts cart)
         {
             try
             {
+                if (cart == null)
+                {
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Cart object sent from client is null.");
+                    return BadRequest("Cart object is null");
+                }
 
-                var newCart = _repository.Cart.AddToCart(cart);
-                return Ok(newCart);
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Invalid Cart object sent from client.");
+                    return BadRequest($"Invalid model {cart}");
+                }
+
+                _repository.Cart.AddToCart(cart);
+                _repository.Save();
+                return CreatedAtRoute<Carts>("CartById", new { userId = cart.UserId, prodID = cart.ProdID }, cart);
             }
             catch (Exception ex)
             {
@@ -203,6 +214,7 @@ namespace TdtdAPI.Controllers
             try
             {
                 _repository.Cart.EmptyCart(id);
+                _repository.Save();
                 return Ok($"Removed all items from user {id}'s cart");
             }
             catch (Exception ex)

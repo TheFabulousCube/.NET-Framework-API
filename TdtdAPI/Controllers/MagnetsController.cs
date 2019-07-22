@@ -67,7 +67,7 @@ namespace TdtdAPI.Controllers
         /// <response code="400">If the item is null</response> 
         /// <response code="500">If there is a database error</response>    
         [HttpGet]
-        [Route("api/magnets/{id}", Name ="MagnetById")]
+        [Route("api/magnets/{id}", Name = "MagnetById")]
         [ResponseType(typeof(Magnets))]
         public IHttpActionResult GetMagnetById(string id)
         {
@@ -143,9 +143,10 @@ namespace TdtdAPI.Controllers
                 if (!ModelState.IsValid)
                 {
                     _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Invalid Magnet object sent from client.");
-                    return BadRequest("Invalid model object");
+                    return BadRequest($"Invalid model {magnet}");
                 }
-                _repository.Magnets.CreateMagnet(magnet);
+
+                Magnets newMagnet = _repository.Magnets.CreateMagnet(magnet);
                 _repository.Save();
 
                 return CreatedAtRoute("MagnetById", new { id = magnet.ProdId }, magnet);
@@ -158,7 +159,7 @@ namespace TdtdAPI.Controllers
         }
 
         /// <summary>
-        /// [Admin] Updatess a State Magnet in the product base 
+        /// [Admin] Updates a State Magnet in the product base 
         /// Mainly used for updating inventory (quantity)
         /// </summary>
         /// <param name="id">
@@ -189,6 +190,7 @@ namespace TdtdAPI.Controllers
         /// <response code="400">If the item is null or invalid</response> 
         /// <response code="500">If there is a database error</response> 
         [HttpPut]
+        [Authorize]
         [Route("api/magnets/{id}")]
         public IHttpActionResult UpdateMagnet(string id, [FromBody]Magnets magnet)
         {
@@ -204,13 +206,13 @@ namespace TdtdAPI.Controllers
                 if (!ModelState.IsValid)
                 {
                     _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet model is invalid {magnet}");
-                    return BadRequest("Invalid model {magnet}");
+                    return BadRequest($"Invalid model {magnet}");
                 }
 
                 Magnets dbMagnet = _repository.Magnets.GetMagnetById(id);
                 if (dbMagnet == null)
                 {
-                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet with id:{magnet.ProdId} couldn't be found");
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet with id:{id} couldn't be found");
                     return NotFound();
                 }
 
@@ -230,6 +232,9 @@ namespace TdtdAPI.Controllers
         /// <summary>
         /// [Admin] Delete
         /// </summary>
+        /// <param name="id">
+        /// The ID of the magnet you want to delete
+        /// </param>
         /// <param name="magnet">
         ///     The magnet to be deleted
         /// </param>
@@ -247,12 +252,38 @@ namespace TdtdAPI.Controllers
         [HttpDelete]
         [Authorize]
         [Route("api/magnets/{id}")]
-        public IHttpActionResult DeleteMagnet(Magnets magnet)
+        public IHttpActionResult DeleteMagnet(string id, [FromBody] Magnets magnet)
         {
             try
             {
+                if (magnet == null)
+                {
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet sent from client is null.");
+                    return BadRequest("Magnet is null");
+                }
+
+                if (id != magnet.ProdId)
+                {
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet sent from client doesn't match id.");
+                    return BadRequest($"Magnet id: {id} doesn't match magnet: {magnet}");
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet model is invalid {magnet}");
+                    return BadRequest($"Invalid model {magnet}");
+                }
+
+                Magnets dbMagnet = _repository.Magnets.GetMagnetById(id);
+                if (dbMagnet == null)
+                {
+                    _logger.LogError($"{MethodBase.GetCurrentMethod().Name} Magnet with id:{magnet.ProdId} couldn't be found");
+                    return NotFound();
+                }
+
                 _repository.Magnets.DeleteMagnet(magnet);
-                return Ok($"Removed {magnet} from inventory");
+                _repository.Save();
+                return Ok($"Removed {dbMagnet} from inventory");
             }
             catch (Exception ex)
             {

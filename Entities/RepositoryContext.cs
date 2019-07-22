@@ -12,8 +12,8 @@ namespace Entities
         { }
 
         public virtual DbSet<Carts> Carts { get; set; }
-        public virtual LookUps.Catagory Catagory_lookup { get; set; }
-        //public virtual DbSet<Catagory> Catagory_lookup { get; set; }
+        //public virtual LookUps.Catagory Catagory_lookup { get; set; }
+        public virtual DbSet<Catagory> Catagory_lookup { get; set; }
         public virtual DbSet<Clothing> Clothings { get; set; }
         public virtual DbSet<Downloads> Downloads { get; set; }
         public virtual DbSet<Magnets> Magnets { get; set; }
