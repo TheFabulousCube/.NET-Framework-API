@@ -22,7 +22,5 @@ namespace Contracts
         Carts AddToCart(Carts cart);
         void RemoveFromCart(Carts cart);
         List<Carts> GetCart(Users user);
-        //string UpdateQTY(Carts item);
-        //ActionResult Checkout();
     }
 }

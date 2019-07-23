@@ -9,7 +9,7 @@ namespace Entities.Models
 {
     public class LookUps
     {
-        public enum Catagory
+        public enum Catagory_Lookup
         {
             [EnumMember(Value = "Adults T-shirts")]
             adultts,

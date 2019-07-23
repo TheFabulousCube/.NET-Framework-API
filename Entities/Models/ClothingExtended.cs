@@ -25,5 +25,17 @@ namespace Entities.Models
             //Size_lookup = clothing.Size_lookup;
             //Sleeve_lookup = clothing.Sleeve_lookup;
         }
+
+        public static void Map(Clothing dbClothing, Clothing clothing)
+        {
+            dbClothing.ProdId = clothing.ProdId;
+            dbClothing.ProdPicture = clothing.ProdPicture;
+            dbClothing.ProdPrice = clothing.ProdPrice;
+            dbClothing.ProdQty = clothing.ProdQty;
+            dbClothing.Catagory = clothing.Catagory;
+            dbClothing.BackPicture = clothing.BackPicture;
+            dbClothing.Size = clothing.Size;
+            dbClothing.SleeveLength = clothing.SleeveLength;
+        }
     }
 }

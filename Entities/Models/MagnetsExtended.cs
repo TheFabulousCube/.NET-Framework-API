@@ -32,19 +32,19 @@
         }
         public bool IsMagnet()
         {
-            return this.Catagory == LookUps.Catagory.magnets.ToString();
+            return this.Catagory == LookUps.Catagory_Lookup.magnets.ToString();
         }
 
         public override string ToString()
         {
             return ($"ProdId = {ProdId}" +
-                    $"\nProdPicture = { ProdPicture}" +
-                    $"\nProdPrice = {ProdPrice}" +
-                    $"\nProdQty = {ProdQty}" +
-                    $"\nCatagory = {Catagory}" +
-                    $"\nProdName = {ProdName}" +
-                    $"\nCapital = {Capital}" +
-                    $"\nStatehood = {Statehood}");
+                    $"/nProdPicture = { ProdPicture}" +
+                    $"/nProdPrice = {ProdPrice}" +
+                    $"/nProdQty = {ProdQty}" +
+                    $"/nCatagory = {Catagory}" +
+                    $"/nProdName = {ProdName}" +
+                    $"/nCapital = {Capital}" +
+                    $"/nStatehood = {Statehood}");
                     
         }
     }
