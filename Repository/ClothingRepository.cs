@@ -13,6 +13,11 @@ namespace Repository
         {
         }
 
+        public void DeleteClothing(Clothing item)
+        {
+            Delete(item);
+        }
+
         public IEnumerable<Clothing> GetAllClothing()
         {
             return FindAll()
@@ -24,6 +29,12 @@ namespace Repository
         {
             return FindByCondition(c => c.ProdId.Equals(clothingId))
                 .FirstOrDefault();
+        }
+
+        public void UpdateClothing(Clothing dbClothing, Clothing item)
+        {
+            Clothing.Map(dbClothing, item);
+            Update(dbClothing);
         }
 
         //public Clothing GetClothingInACart(string clothingId)

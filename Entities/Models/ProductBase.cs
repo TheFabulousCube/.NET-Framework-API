@@ -27,7 +27,7 @@ namespace Entities.Models
 
         public bool IsMagnet()
         {
-            return this.Catagory == LookUps.Catagory.magnets.ToString();
+            return this.Catagory == LookUps.Catagory_Lookup.magnets.ToString();
         }
     }
 }

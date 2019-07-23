@@ -159,7 +159,7 @@ namespace TdtdAPI.Controllers
         }
 
         /// <summary>
-        /// [Admin] Updates a State Magnet in the product base 
+        /// [Admin] Updates a State Magnet in the product base  
         /// Mainly used for updating inventory (quantity)
         /// </summary>
         /// <param name="id">
