@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace TdtdAPI
 {
@@ -19,7 +20,9 @@ namespace TdtdAPI
              * config.EnableCors(cors);
              * 
              * *************************************************/
-            config.EnableCors();
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            //var cors = new EnableCorsAttribute("http://localhost:4200, http://staging.tadaatiedye.com, http://admin.tadaatiedye.com", "*", "*");
+            config.EnableCors(cors);
 
 
             // Web API routes
