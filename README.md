@@ -1,6 +1,8 @@
 # Tadaa Tie Dye API
 
-New WebAPI project.  This decouples the back end from an Angular/Ionic/Mobile/etc. front end.
+New WebAPI project.  This decouples the back end from an Angular/Ionic/Mobile/etc. front end.  
+### Postman Collection
+I've included the Postman collection I used for testing.  It includes the environments, you may need to adjust the local environments if you're trying to use those.  I *hope* I moved the API key to a Global Variable, I didn't export those.  If not, I guess I'll have to restore the database from a backup.
 
 Based on Code Maze Tutorial at https://code-maze.com/net-core-series/.  
 #### It was working **great** with .NET Core, but I'm publishing to shared hosting (Go Daddy) and they don't support .NET Core.  I've rewritten it in .NET Framework and had a few issues along the way.
@@ -21,12 +23,9 @@ The **Repository Pattern** is working nice!  Since the magnets & T-shirts have c
 **Dependancy Injection** is easy in .NET Core. I had to institute Unity.  It's pretty nice, works for the Logger, too!  I just haven't used the Logger much yet.
 ***
 ## Change Log
-<<<<<<< HEAD
-1.1.0.0 - OAuth & Swagger
-1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the Deployment process to Jenkins. By doing that, I can 
-=======
-1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the [Deployment process to Jenkins](https://github.com/TheFabulousCube/.NET-Framework-API/blob/master/JenkinsSetUp.md). By doing that, I can 
->>>>>>> 6e4628e... Added link to Jenkins documentation
+  1.1.1.0 - Everything seems to be working fine on the server!  Now I'm willing to put in the effort to fully flesh out the rest of the calls!  
+  1.1.0.0 - OAuth & Swagger  
+  1.0.0.1 - Not a lot code wise.  It took a whole weekend, but I've moved the Deployment process to Jenkins. By doing that, I can 
           remove sensitive Production connections strings from here and build them at deployment time.
           A push to the _dev_ branch triggers a build/run tests.  If that passes, Jenkins merges the _dev_ branch onto the _qa_
           branch and calls **Deploy to QA**.  **Deploy to QA** does another build, creating the deployment package & deploys to
@@ -37,12 +36,12 @@ The **Repository Pattern** is working nice!  Since the magnets & T-shirts have c
 ***
 
 ## Still to come: 
-  * Finishing out the rest of the controllers
+  * ~~Finishing out the rest of the controllers~~
   * ~~Jenkins build/deploy to QA, then deploy to Staging/Prod~~
   * Replace NLog with Serilog
   * Unit tests (Framework is in place)
-  * Windows Based Authorization - I can lock down the CORS to only my domain also
+  * ~~Windows Based Authorization - I can lock down the CORS to only my domain also~~
   * Async
-  * Swagger
-  * I'm building a Postman collection along the way!
+  * ~~Swagger~~
+  * ~~I'm building a Postman collection along the way!~~
 

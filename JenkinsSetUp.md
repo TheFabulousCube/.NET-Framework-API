@@ -46,9 +46,11 @@ Otherwise it's similar to **Deploy to QA**
 5) Runs the auto-generated batch file using the adjusted `SetParameters.xml` file to deploy to the shared hosting server
 
 ### Deploy to Prod
-this job is the same as **Deploy to Staging** except it will pull from `staging` and deploy to the shared server at api.tadaatiedye.com
+This job is the same as **Deploy to Staging** except it will pull from `staging` and deploy to the shared server at api.tadaatiedye.com
 
-
+## Update!
+The **Build To QA** job is on build #47, several fail, a couple pass.   Then I made another change and several more fail, then a few pass.  The **Deploy To QA** is on about build #24 some pass some fail.  By the time I got to **Deploy To Staging**, I had a lot of issues deploying to the server, back up to #55, with *lots* of failures.  But all that hard work and patience must have paid off, **Deploy To Prod** is on #7 without a single failure (yet)!  
+I noticed a spelling error in the Swagger on Production.  I had to go back to Visual Studio to make the change & build the change up the chain, it took about 10 minutes from defect to fixed!  That's why I did this!
 ## Issues & Problems (`Here, there be Dragons!`)
 * None of the packages would install on the QA build.  I really racked my brain on this one.  I checked the location of the files and they are there.  I couldn't figure out why they build couldn't pick them up from the default location, so I copied one into a folder defined in a 'Hint Path'.  That worked, but it's not right.  *Finally* I noticed that the path is a relative path.  Sure enough, .gitignore excluded the packages folder for me.  (I guess it's to save space., they _can_ be downloaded again.)  I figured I had three options:
   1) Remove the exclusion from .gitignore.  This meant copying a pretty large amount of redundant data all over the place.  I don't like this.
